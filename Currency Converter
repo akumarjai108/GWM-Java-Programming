@@ -1,0 +1,56 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Currency_Converter {
+
+    public static void main(String[] args) {
+
+        double rupee, dollar, pound, euro;
+        DecimalFormat f = new DecimalFormat("##.###");
+        Scanner src = new Scanner(System.in);
+        System.out.println("--- Welcome to Currency Converter ---\nEnter the currency mode :");
+         int mode = src.nextInt();
+         if(mode==1){
+             System.out.println("Enter amount in Rupees: ");
+             rupee = src.nextDouble();
+             dollar = rupee/82.7;
+             System.out.println("Dollar :"+f.format(dollar));
+             pound = rupee/105.78;
+             System.out.println("Pound :"+f.format(pound));
+             euro = rupee/90.27;
+             System.out.println("Euro :"+f.format(euro));
+
+         } else if (mode==2){
+             System.out.println("Enter amount in Dollar: ");
+             dollar = src.nextDouble();
+             rupee = dollar*82.7;
+             System.out.println("Rupees :"+f.format(rupee));
+             pound = dollar*0.78;
+             System.out.println("Pound :"+f.format(pound));
+             euro = dollar*0.91;
+             System.out.println("Euro :"+f.format(euro));
+
+         } else if (mode==3){
+             System.out.println("Enter amount in Pound: ");
+             pound = src.nextDouble();
+             rupee = pound*105.78;
+             System.out.println("Rupees :"+f.format(rupee));
+             dollar = pound*1.29;
+             System.out.println("Dollar :"+f.format(dollar));
+             euro = pound*1.17;
+             System.out.println("Euro :"+f.format(euro));
+
+         } else if (mode==4){
+             System.out.println("Enter amount in Euro: ");
+             euro = src.nextDouble();
+             rupee = euro*90.27;
+             System.out.println("Rupees :"+f.format(rupee));
+             dollar = euro*1.10;
+             System.out.println("Dollar :"+f.format(dollar));
+             pound = euro*0.86;
+             System.out.println("Pound :"+f.format(pound));
+         }else {
+             System.out.println("Invalid!!!");
+         }
+    }
+}
